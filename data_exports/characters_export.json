@@ -1,0 +1,830 @@
+[
+    {
+        "name": "Acheron",
+        "element": "Lightning",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0.5",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Aglaea",
+        "element": "Lightning",
+        "path": "Remembrance",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Anaxa",
+        "element": "Wind",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "Unknown",
+        "ratings": {
+            "MoC": "N/A",
+            "PF": "N/A",
+            "AS": "N/A"
+        }
+    },
+    {
+        "name": "Argenti",
+        "element": "Physical",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T0.5",
+            "AS": "T1.5"
+        }
+    },
+    {
+        "name": "Arlan",
+        "element": "Lightning",
+        "path": "Destruction",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Asta",
+        "element": "Fire",
+        "path": "Harmony",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T4",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Aventurine",
+        "element": "Imaginary",
+        "path": "Preservation",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0.5",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Bailu",
+        "element": "Lightning",
+        "path": "Abundance",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T4",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Black Swan",
+        "element": "Wind",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Blade",
+        "element": "Wind",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T3",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Boothill",
+        "element": "Physical",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T5",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Bronya",
+        "element": "Wind",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T2",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Castorice",
+        "element": "Quantum",
+        "path": "Remembrance",
+        "rarity": "5★",
+        "role": "Unknown",
+        "ratings": {
+            "MoC": "N/A",
+            "PF": "N/A",
+            "AS": "N/A"
+        }
+    },
+    {
+        "name": "Clara",
+        "element": "Physical",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T3",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Dan Heng",
+        "element": "Wind",
+        "path": "Hunt",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Dan Heng • Imbibitor Lunae",
+        "element": "Imaginary",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T4",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Dr. Ratio",
+        "element": "Imaginary",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T5",
+            "AS": "T1.5"
+        }
+    },
+    {
+        "name": "Feixiao",
+        "element": "Wind",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T3",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Firefly",
+        "element": "Fire",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T3",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Fu Xuan",
+        "element": "Quantum",
+        "path": "Preservation",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T1",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Gallagher",
+        "element": "Fire",
+        "path": "Abundance",
+        "rarity": "4★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T1",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Gepard",
+        "element": "Ice",
+        "path": "Preservation",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T3",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Guinaifen",
+        "element": "Fire",
+        "path": "Nihility",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T4",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Hanya",
+        "element": "Physical",
+        "path": "Harmony",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T3",
+            "PF": "T5",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Herta",
+        "element": "Ice",
+        "path": "Erudition",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T0",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Himeko",
+        "element": "Fire",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Hook",
+        "element": "Fire",
+        "path": "Destruction",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Huohuo",
+        "element": "Wind",
+        "path": "Abundance",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Jade",
+        "element": "Quantum",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Jiaoqiu",
+        "element": "Fire",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0.5",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Jing Yuan",
+        "element": "Lightning",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T0.5",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Jingliu",
+        "element": "Ice",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T2",
+            "PF": "T4",
+            "AS": "T2"
+        }
+    },
+    {
+        "name": "Kafka",
+        "element": "Lightning",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Lingsha",
+        "element": "Fire",
+        "path": "Abundance",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Luka",
+        "element": "Physical",
+        "path": "Nihility",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T4",
+            "PF": "T5",
+            "AS": "T4"
+        }
+    },
+    {
+        "name": "Luocha",
+        "element": "Imaginary",
+        "path": "Abundance",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Lynx",
+        "element": "Quantum",
+        "path": "Abundance",
+        "rarity": "4★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T3",
+            "PF": "T4",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "March 7th",
+        "element": "Ice",
+        "path": "Preservation",
+        "rarity": "4★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "March 7th • The Hunt",
+        "element": "Imaginary",
+        "path": "Hunt",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "N/A",
+            "PF": "N/A",
+            "AS": "N/A"
+        }
+    },
+    {
+        "name": "Misha",
+        "element": "Ice",
+        "path": "Destruction",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Moze",
+        "element": "Lightning",
+        "path": "Hunt",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Mydei",
+        "element": "Imaginary",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "Unknown",
+        "ratings": {
+            "MoC": "N/A",
+            "PF": "N/A",
+            "AS": "N/A"
+        }
+    },
+    {
+        "name": "Natasha",
+        "element": "Physical",
+        "path": "Abundance",
+        "rarity": "4★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Pela",
+        "element": "Ice",
+        "path": "Nihility",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Qingque",
+        "element": "Quantum",
+        "path": "Erudition",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T4",
+            "PF": "T4",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Rappa",
+        "element": "Imaginary",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0.5",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Robin",
+        "element": "Physical",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Ruan Mei",
+        "element": "Ice",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0.5",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Sampo",
+        "element": "Wind",
+        "path": "Nihility",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T3",
+            "PF": "T5",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Seele",
+        "element": "Quantum",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T3",
+            "PF": "T4",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Serval",
+        "element": "Lightning",
+        "path": "Erudition",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Silver Wolf",
+        "element": "Quantum",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1.5",
+            "PF": "T5",
+            "AS": "T1.5"
+        }
+    },
+    {
+        "name": "Sparkle",
+        "element": "Quantum",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    },
+    {
+        "name": "Sunday",
+        "element": "Imaginary",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Sushang",
+        "element": "Physical",
+        "path": "Hunt",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T4"
+        }
+    },
+    {
+        "name": "The Herta",
+        "element": "Ice",
+        "path": "Erudition",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0",
+            "PF": "T0",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Tingyun",
+        "element": "Lightning",
+        "path": "Harmony",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1",
+            "AS": "T1.5"
+        }
+    },
+    {
+        "name": "Tingyun • Fugue",
+        "element": "Fire",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0.5",
+            "AS": "T0"
+        }
+    },
+    {
+        "name": "Topaz & Numby",
+        "element": "Fire",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T4",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Trailblazer • Destruction",
+        "element": "Physical",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Trailblazer • Harmony",
+        "element": "Imaginary",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T1",
+            "PF": "T1",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Trailblazer • Preservation",
+        "element": "Fire",
+        "path": "Preservation",
+        "rarity": "5★",
+        "role": "Sustain",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Trailblazer • Remembrance",
+        "element": "Ice",
+        "path": "Remembrance",
+        "rarity": "5★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T0",
+            "AS": "T0.5"
+        }
+    },
+    {
+        "name": "Tribbie",
+        "element": "Quantum",
+        "path": "Harmony",
+        "rarity": "5★",
+        "role": "Unknown",
+        "ratings": {
+            "MoC": "N/A",
+            "PF": "N/A",
+            "AS": "N/A"
+        }
+    },
+    {
+        "name": "Welt",
+        "element": "Imaginary",
+        "path": "Nihility",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T4",
+            "PF": "T4",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Xueyi",
+        "element": "Quantum",
+        "path": "Destruction",
+        "rarity": "4★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T4",
+            "PF": "T4",
+            "AS": "T3"
+        }
+    },
+    {
+        "name": "Yanqing",
+        "element": "Ice",
+        "path": "Hunt",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T4"
+        }
+    },
+    {
+        "name": "Yukong",
+        "element": "Imaginary",
+        "path": "Harmony",
+        "rarity": "4★",
+        "role": "Amplifier",
+        "ratings": {
+            "MoC": "T5",
+            "PF": "T5",
+            "AS": "T5"
+        }
+    },
+    {
+        "name": "Yunli",
+        "element": "Physical",
+        "path": "Destruction",
+        "rarity": "5★",
+        "role": "DPS",
+        "ratings": {
+            "MoC": "T0.5",
+            "PF": "T1.5",
+            "AS": "T1"
+        }
+    }
+]

@@ -169,6 +169,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Databases
-.hsr.db
+hsr.db

@@ -14,6 +14,7 @@ from scraper.models import Character
 from sqlalchemy.exc import IntegrityError
 
 import json
+import csv
 import os
 
 def scrape_star_rail_characters(limit=None):
@@ -142,53 +143,43 @@ def get_characters():
     finally:
         db.close()
 
-def export_to_json(characters, filename="prydwen_hsr.json"):
-    # Convert each SQLAlchemy object into a dict
+def export_characters_json(characters, filename="characters_export.json"):
     data = []
     for char in characters:
         data.append({
             "name": char.name,
-            "rarity": char.rarity,
             "element": char.element,
             "path": char.path,
+            "rarity": char.rarity,
             "role": char.role,
             "moc_rating": char.moc_rating,
             "pf_rating": char.pf_rating,
             "as_rating": char.as_rating,
         })
 
+    os.makedirs("data_exports", exist_ok=True)
     with open(os.path.join("data_exports", filename), "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
     print(f"Exported {len(data)} records to {filename} successfully!")
 
-import csv
-
-def export_to_csv(characters, filename="prydwen_hsr.csv"):
+def export_characters_csv(characters, filename="characters_export.csv"):
+    os.makedirs("data_exports", exist_ok=True)
     with open(os.path.join("data_exports", filename), "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
-        # Write header
-        writer.writerow(["name", "rarity", "element", "path", "role", "moc_rating", "pf_rating", "as_rating"])
-
+        writer.writerow(["name", "element", "path", "rarity", "role", "moc_rating", "pf_rating", "as_rating"])
         for char in characters:
             writer.writerow([
                 char.name,
-                char.rarity,
                 char.element,
                 char.path,
+                char.rarity,
                 char.role,
                 char.moc_rating,
                 char.pf_rating,
-                char.as_rating # Store JSON as string
+                char.as_rating
             ])
-
     print(f"Exported {len(characters)} records to {filename} successfully!")
-
-# def main():
-#     characters = scrape_star_rail_characters()
-#     # For now, just print them
-#     for c in characters:
-#         print(c)
 
 def main():
     # 1. Initialize DB
@@ -203,11 +194,11 @@ def main():
     print("Scraping and saving completed!")
 
     # Query all characters in DB
-    all_characters = get_characters()
+    all_chars = get_characters()
 
     # Export
-    export_to_json(all_characters, "characters_export.json")
-    export_to_csv(all_characters, "characters_export.csv")
+    export_characters_json(all_chars, "characters.json")
+    export_characters_csv(all_chars, "characters.csv")
 
 if __name__ == "__main__":
     main()

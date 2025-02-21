@@ -173,3 +173,5 @@ hsr.db
 .hsr.db
 vscode/
 .vscode/
+data_exports/
+.data_exports/

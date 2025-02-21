@@ -14,10 +14,11 @@ def test_scrape_star_rail_characters():
     # Check required keys
     for char in characters:
         assert "name" in char, "Character entry missing 'name'"
+        assert "rarity" in char, "Character entry missing 'rarity'"
         assert "element" in char, "Character entry missing 'element'"
         assert "path" in char, "Character entry missing 'path'"
-        assert "rarity" in char, "Character entry missing 'rarity'"
         assert "role" in char, "Character entry missing 'role'"
         assert "moc_rating" in char, "Character entry missing 'moc_rating'"
         assert "pf_rating" in char, "Character entry missing 'pf_rating'"
         assert "as_rating" in char, "Character entry missing 'as_rating'"
+        assert "average_rating" in char, "Character entry missing 'average_rating'"

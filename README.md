@@ -1,4 +1,4 @@
-# Star Rail Scraper
+# Prydwen Honkai: Star Rail Scraper
 
 A Python-based scraper for [Prydwen.gg](https://www.prydwen.gg/star-rail/characters/) to collect Honkai: Star Rail character data, including **numeric ratings** and an **average rating** (rounded to 2 decimals).
 

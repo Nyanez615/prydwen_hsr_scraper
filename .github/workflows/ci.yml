@@ -2,7 +2,11 @@
 
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build-and-test:
@@ -11,11 +15,14 @@ jobs:
     env:
       BROWSER: "chromium"
       SCRAPE_URL: "https://www.prydwen.gg/star-rail/characters/"
-      SCRAPE_LIMIT: None
+      SCRAPE_LIMIT: ""
       DB_URL: "sqlite:///hsr.db"
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,9 +31,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install --upgrade pip && pip install -r requirements.txt
-
-      - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
   
       - name: Run tests
         run: pytest --maxfail=1 --disable-warnings -q

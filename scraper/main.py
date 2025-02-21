@@ -3,7 +3,6 @@
 import os
 import logging
 import re
-import time
 import json
 import csv
 
@@ -35,7 +34,7 @@ logger = logging.getLogger(__name__)
 def get_driver():
     """
     Create a Selenium WebDriver instance based on environment variable BROWSER.
-    Default: Chrome.
+    Default: chromium.
     """
     browser_choice = os.environ.get('BROWSER', 'chromium').lower()
 
@@ -51,7 +50,7 @@ def get_driver():
         options = ChromeOptions()
         for arg in CHROMIUM_OPTIONS:
             options.add_argument(arg)
-        # Possibly set the binary location if needed:
+        # If needed, specify a custom path:
         # options.binary_location = "/usr/bin/chromium"
         return webdriver.Chrome(options=options)
 
@@ -63,15 +62,15 @@ def get_driver():
         return webdriver.Firefox(options=options)
 
     else:
-        logger.warning(f"Browser '{browser_choice}' is not recognized; defaulting to Chrome.")
+        logger.warning(f"Browser '{browser_choice}' not recognized; defaulting to Chromium.")
         options = ChromeOptions()
-        for arg in CHROME_OPTIONS:
+        for arg in CHROMIUM_OPTIONS:
             options.add_argument(arg)
         return webdriver.Chrome(options=options)
 
 def parse_rating(rating_str):
     """
-    Remove 'T' and convert to float. 
+    Remove 'T' and convert to float.
     If rating_str == 'N/A' or cannot be parsed, return None.
     Example: 'T0' -> 0.0, 'T1.5' -> 1.5
     """
@@ -94,8 +93,9 @@ def scrape_star_rail_characters():
     Returns a list of dicts containing scraped character data.
     """
     url = os.environ.get('SCRAPE_URL', 'https://www.prydwen.gg/star-rail/characters/')
+    # If SCRAPE_LIMIT is None or empty, no limit
     limit = os.environ.get('SCRAPE_LIMIT', None)
-
+    
     if limit == "None":
         limit = None
     elif limit is not None:
@@ -108,13 +108,13 @@ def scrape_star_rail_characters():
     driver = get_driver()
 
     characters = []
-    logger.info(f"Scraping from URL: {url} with limit={limit}")
+    logger.info(f"Scraping from URL: {url}; limit={limit or 'No Limit'}")
 
     try:
         driver.get(url)
 
-        # Wait for the avatar cards to appear
-        WebDriverWait(driver, 15).until(
+        # Wait until the avatar cards to appear
+        WebDriverWait(driver, 10).until(
             EC.presence_of_all_elements_located((By.CLASS_NAME, "avatar-card"))
         )
         character_cards = driver.find_elements(By.CLASS_NAME, "avatar-card")
@@ -122,7 +122,11 @@ def scrape_star_rail_characters():
         actions = ActionChains(driver)
         possible_roles = ['DPS', 'Support DPS', 'Amplifier', 'Sustain']
 
-        for card in character_cards[:limit]:
+        # If limit is not None, slice the list
+        if limit is not None:
+            character_cards = character_cards[:limit]
+
+        for card in character_cards:
             # Scroll into view
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", card)
 
@@ -131,7 +135,7 @@ def scrape_star_rail_characters():
 
             # Wait until the popover ('tippy-content') is visible
             try:
-                WebDriverWait(driver, 15).until(
+                WebDriverWait(driver, 10).until(
                     EC.visibility_of_element_located((By.CLASS_NAME, 'tippy-content'))
                 )
             except:
@@ -217,34 +221,54 @@ def scrape_star_rail_characters():
 def save_characters_to_db(characters):
     """
     Persists scraped character data into the database.
+    If a character already exists, update its ratings (and average) if changed.
     """
-    db_url = os.environ.get('DB_URL', 'sqlite:///hsr.db')
-    logger.info(f"Saving data to DB at {db_url} ...")
-
-    # The actual engine binding is in db.py, which uses 'sqlite:///hsr.db' by default,
-    # but if you'd like to override it completely, you can adapt db.py to read from DB_URL.
-    # For now, we'll just use the existing engine with local "hsr.db".
     db = SessionLocal()
     try:
         for data in characters:
-            char = Character(
-                name=data['name'],
-                element=data['element'],
-                path=data['path'],
-                rarity=data['rarity'],
-                role=data['role'],
-                moc_rating=data['moc_rating'],
-                pf_rating=data['pf_rating'],
-                as_rating=data['as_rating'],
-                average_rating=data['average_rating']
-            )
-            db.add(char)
-            try:
-                db.commit()
-                logger.info(f"Saved {char.name} to DB.")
-            except IntegrityError:
-                db.rollback()
-                logger.warning(f"Character '{char.name}' already exists. Skipping...")
+            existing = db.query(Character).filter_by(name=data['name']).first()
+            if existing:
+                # Check if the new ratings differ
+                updated = False
+                if existing.moc_rating != data['moc_rating']:
+                    existing.moc_rating = data['moc_rating']
+                    updated = True
+                if existing.pf_rating != data['pf_rating']:
+                    existing.pf_rating = data['pf_rating']
+                    updated = True
+                if existing.as_rating != data['as_rating']:
+                    existing.as_rating = data['as_rating']
+                    updated = True
+                if existing.average_rating != data['average_rating']:
+                    existing.average_rating = data['average_rating']
+                    updated = True
+
+                if updated:
+                    db.commit()
+                    logger.info(f"Updated ratings for {existing.name}")
+                else:
+                    logger.info(f"No rating changes for {existing.name}, skipping update.")
+            else:
+                # New character
+                char = Character(
+                    name=data['name'],
+                    element=data['element'],
+                    path=data['path'],
+                    rarity=data['rarity'],
+                    role=data['role'],
+                    moc_rating=data['moc_rating'],
+                    pf_rating=data['pf_rating'],
+                    as_rating=data['as_rating'],
+                    average_rating=data['average_rating']
+                )
+                db.add(char)
+                try:
+                    db.commit()
+                    logger.info(f"Saved {char.name} to DB.")
+                except IntegrityError:
+                    db.rollback()
+                    logger.warning(f"Character '{char.name}' caused IntegrityError, skipping...")
+
     finally:
         db.close()
 
@@ -300,13 +324,15 @@ def export_characters_csv(characters, filename="characters_export.csv"):
     print(f"Exported {len(characters)} records to {filename} successfully!")
 
 def main():
+    # Initialize/ensure DB structure
     init_db()
     logger.info("Database initialized.")
 
+    # Scrape
     characters = scrape_star_rail_characters()
     if characters:
         save_characters_to_db(characters)
-        logger.info("All characters saved to DB.")
+        logger.info("All characters saved or updated in DB.")
 
     logger.info("Scraping process completed.")
 

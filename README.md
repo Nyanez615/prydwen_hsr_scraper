@@ -1,25 +1,24 @@
-# Star Rail Scraper
+# Prydwen Honkai: Star Rail (HSR) Scraper
 
-A Python-based scraper for [Prydwen.gg](https://www.prydwen.gg/star-rail/characters/) to collect Honkai: Star Rail character data, including **numeric ratings** and an **average rating** (rounded to 2 decimals).
+A Python-based scraper for [Prydwen.gg](https://www.prydwen.gg/star-rail/characters/) to collect HSR character data, including **name**, **rarity**, **element**, **path**, **role**, and endgame mode **ratings**.
 
 ## Features
 
 - Uses **Selenium** (headless browser) to parse data
-- Separate columns for MoC, PF, and AS ratings (float) plus an **average_rating**
+- Separate columns for **Memory of Chaos (MoC)**, **Pure Fiction (PF)**, and **Apocalyptic Shadow (AS)** ratings (float) plus an **average_rating**
 - **Environment variables** to control DB path, browser choice, scrape URL, etc.
 - Robust **explicit waits** instead of `time.sleep()`
 - **Logging** via Python's `logging` module
 - GitHub Actions: 
   - **CI** for tests  
-  - **Scheduled** daily run that uploads the latest `hsr.db` artifact
 
 ## Installation
 
 1. **Clone** this repository:
    
    ```bash
-   git clone https://github.com/YourUsername/star-rail-scraper.git
-   cd star-rail-scraper
+   git clone https://github.com/Nyanez615/prydwen_hsr_scraper.git
+   cd prydwen_hsr_scraper
    ```
 
 2. **Create and activate** a virtual environment
@@ -92,11 +91,6 @@ A Python-based scraper for [Prydwen.gg](https://www.prydwen.gg/star-rail/charact
   - name: Set PYTHONPATH
     un: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
   ```
-  
-### Scheduled Scraper (Optional): 
-
-- You can create a `.github/workflows/schedule.yml` that runs the scraper daily, then uploads artifacts or the DB. 
-- Runs daily at 2 AM UTC, executes `python -m scraper.main`, and uploads `hsr.db`, `characters.json`, and `characters.csv` as artifacts.
 
 ## Additional Configuration
 

@@ -88,9 +88,9 @@ def parse_rating(rating_str):
         logger.debug(f"Could not parse rating: {rating_str}")
         return None
 
-def scrape_star_rail_characters():
+def scrape_hsr_characters():
     """
-    Scrapes Star Rail character data from an environment-defined URL or default.
+    Scrapes HSR character data from an environment-defined URL or default.
     Returns a list of dicts containing scraped character data.
     """
     url = os.environ.get('SCRAPE_URL', 'https://www.prydwen.gg/star-rail/characters/')
@@ -155,6 +155,7 @@ def scrape_star_rail_characters():
                     logger.debug("Not enough <img> tags in popover.")
                     continue
 
+                # Name, element, and path
                 name = images[1]['alt']
                 element = images[4]['alt']
                 path = images[7]['alt']
@@ -333,7 +334,7 @@ def main():
     logger.info("Database initialized.")
 
     # Scrape
-    characters = scrape_star_rail_characters()
+    characters = scrape_hsr_characters()
     if characters:
         save_characters_to_db(characters)
         logger.info("All characters saved or updated in DB.")

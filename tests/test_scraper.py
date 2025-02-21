@@ -1,9 +1,9 @@
 # tests/test_scraper.py
 import pytest
 import os
-from scraper.main import scrape_star_rail_characters
+from scraper.main import scrape_hsr_characters
 
-def test_scrape_star_rail_characters():
+def test_scrape_hsr_characters():
     """
     Basic test to ensure scraper returns a list and 
     doesn't raise exceptions for the first few characters.
@@ -11,7 +11,7 @@ def test_scrape_star_rail_characters():
     # Set the environment variable for limit
     os.environ['SCRAPE_LIMIT'] = '3'
     
-    characters = scrape_star_rail_characters()
+    characters = scrape_hsr_characters()
     assert isinstance(characters, list), "Scraper should return a list"
     # Check required keys
     for char in characters:

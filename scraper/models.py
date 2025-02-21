@@ -14,11 +14,7 @@ class Character(Base):
     path = Column(String, nullable=False)
     rarity = Column(String, nullable=False)
     role = Column(String, nullable=False)
-
-    # Ratings stored as floats now
     moc_rating = Column(Float)
     pf_rating = Column(Float)
     as_rating = Column(Float)
-
-    # Store the average rating as float
     average_rating = Column(Float)

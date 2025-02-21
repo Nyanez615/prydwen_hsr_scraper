@@ -1,5 +1,6 @@
 # tests/test_scraper.py
 import pytest
+import os
 from scraper.main import scrape_star_rail_characters
 
 def test_scrape_star_rail_characters():
@@ -7,8 +8,10 @@ def test_scrape_star_rail_characters():
     Basic test to ensure scraper returns a list and 
     doesn't raise exceptions for the first few characters.
     """
-    # Let's just test with limit=2 to keep it quick
-    characters = scrape_star_rail_characters(limit=2)
+    # Set the environment variable for limit
+    os.environ['SCRAPE_LIMIT'] = '2'
+    
+    characters = scrape_star_rail_characters()
     assert isinstance(characters, list), "Scraper should return a list"
     assert len(characters) == 2, "Should scrape exactly 2 characters"
     # Check required keys

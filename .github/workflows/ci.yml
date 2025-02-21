@@ -2,17 +2,18 @@
 
 name: CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: "0 2 * * *"  # Runs at 2 AM UTC every day
+on: [push, pull_request]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    env:
+      BROWSER: "chromium"
+      SCRAPE_URL: "https://www.prydwen.gg/star-rail/characters/"
+      SCRAPE_LIMIT: None
+      DB_URL: "sqlite:///hsr.db"
+
     steps:
       - uses: actions/checkout@v2
       

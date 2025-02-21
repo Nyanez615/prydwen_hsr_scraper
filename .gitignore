@@ -175,3 +175,4 @@ vscode/
 .vscode/
 data_exports/
 .data_exports/
+.DS_Store

@@ -3,6 +3,7 @@
 import os
 import logging
 import re
+import time
 import json
 import csv
 
@@ -120,11 +121,14 @@ def scrape_star_rail_characters():
         character_cards = driver.find_elements(By.CLASS_NAME, "avatar-card")
 
         actions = ActionChains(driver)
-        possible_roles = ['DPS', 'Support DPS', 'Amplifier', 'Sustain']
+        possible_roles = ['Amplifier', 'Support DPS', 'Sustain', 'DPS']
 
         # If limit is not None, slice the list
         if limit is not None:
             character_cards = character_cards[:limit]
+
+        # After page load:
+        time.sleep(2)  # Let Tippy fully initialize
 
         for card in character_cards:
             # Scroll into view

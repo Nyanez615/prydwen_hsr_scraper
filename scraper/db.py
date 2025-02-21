@@ -4,9 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from scraper.models import Base
 
-# Local SQLite DB; echo=True logs SQL statements for debugging
-engine = create_engine('sqlite:///hsr.db', echo=True)
-
+engine = create_engine("sqlite:///hsr.db", echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def init_db():

@@ -10,9 +10,9 @@ class Character(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String, unique=True, nullable=False)
+    rarity = Column(String, nullable=False)
     element = Column(String, nullable=False)
     path = Column(String, nullable=False)
-    rarity = Column(String, nullable=False)
     role = Column(String, nullable=False)
     moc_rating = Column(Float)
     pf_rating = Column(Float)

@@ -128,7 +128,7 @@ def scrape_hsr_characters():
             character_cards = character_cards[:limit]
 
         # After page load:
-        time.sleep(2)  # Let Tippy fully initialize
+        time.sleep(3)  # Let Tippy fully initialize
 
         for card in character_cards:
             # Scroll into view
@@ -162,9 +162,9 @@ def scrape_hsr_characters():
 
                 # Rarity
                 if soup.find(class_='rar-5'):
-                    rarity = '5★'
+                    rarity = '5'
                 elif soup.find(class_='rar-4'):
-                    rarity = '4★'
+                    rarity = '4'
                 else:
                     rarity = 'Unknown'
 
@@ -181,11 +181,11 @@ def scrape_hsr_characters():
                 moc_str, pf_str, as_str = 'N/A', 'N/A', 'N/A'
 
                 if rating_divs:
-                    if rarity == '5★' and len(rating_divs) >= 3:
+                    if rarity == '5' and len(rating_divs) >= 3:
                         moc_str = rating_divs[0].get_text(strip=True)
                         pf_str = rating_divs[1].get_text(strip=True)
                         as_str = rating_divs[2].get_text(strip=True)
-                    elif rarity == '4★' and len(rating_divs) >= 6:
+                    elif rarity == '4' and len(rating_divs) >= 6:
                         moc_str = rating_divs[3].get_text(strip=True)
                         pf_str = rating_divs[4].get_text(strip=True)
                         as_str = rating_divs[5].get_text(strip=True)
@@ -203,9 +203,9 @@ def scrape_hsr_characters():
 
                 characters.append({
                     'name': name,
+                    'rarity': rarity,
                     'element': element,
                     'path': path,
-                    'rarity': rarity,
                     'role': role,
                     'moc_rating': moc_val,
                     'pf_rating': pf_val,
@@ -257,9 +257,9 @@ def save_characters_to_db(characters):
                 # New character
                 char = Character(
                     name=data['name'],
+                    rarity=data['rarity'],
                     element=data['element'],
                     path=data['path'],
-                    rarity=data['rarity'],
                     role=data['role'],
                     moc_rating=data['moc_rating'],
                     pf_rating=data['pf_rating'],
@@ -290,9 +290,9 @@ def export_characters_json(characters, filename="characters_export.json"):
     for char in characters:
         data.append({
             "name": char.name,
+            "rarity": char.rarity,
             "element": char.element,
             "path": char.path,
-            "rarity": char.rarity,
             "role": char.role,
             "moc_rating": char.moc_rating,
             "pf_rating": char.pf_rating,
@@ -311,15 +311,22 @@ def export_characters_csv(characters, filename="characters_export.csv"):
     with open(os.path.join("data_exports", filename), "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "name", "element", "path", "rarity", "role",
-            "moc_rating", "pf_rating", "as_rating", "average_rating"
+            "name", 
+            "rarity", 
+            "element", 
+            "path", 
+            "role",
+            "moc_rating", 
+            "pf_rating", 
+            "as_rating", 
+            "average_rating"
         ])
         for char in characters:
             writer.writerow([
                 char.name,
+                char.rarity,
                 char.element,
                 char.path,
-                char.rarity,
                 char.role,
                 char.moc_rating,
                 char.pf_rating,

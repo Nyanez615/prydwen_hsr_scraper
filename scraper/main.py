@@ -311,15 +311,15 @@ def export_characters_csv(characters, filename="characters_export.csv"):
     with open(os.path.join("data_exports", filename), "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "name", 
-            "rarity", 
-            "element", 
-            "path", 
-            "role",
-            "moc_rating", 
-            "pf_rating", 
-            "as_rating", 
-            "average_rating"
+            "Name", 
+            "Rarity", 
+            "Element", 
+            "Path", 
+            "Role",
+            "MoC Rating", 
+            "PF Rating", 
+            "AS Rating", 
+            "Average Rating"
         ])
         for char in characters:
             writer.writerow([
